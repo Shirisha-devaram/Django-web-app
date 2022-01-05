@@ -1,0 +1,30 @@
+<ul> 
+    <div>
+        <a href="/signout"><button>Log Out</button></a>
+    </div>
+    <table>
+        <tr>
+            <th>UserId</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Edit User</th>
+            <th>Delete User</th>
+        </tr>
+        {% for item in user %}
+        <tr> 
+            <td>{{ item.id }}</td>
+            <td>{{ item.username }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.address }}</td>
+            <td><a href="/edit/user/update/{{item.id}}/">edit user</a></td>
+            <td><a href="/edit/user/delete/{{item.id}}/">delete user</a></td>
+        </tr>
+        
+        {% empty %} 
+        <li>No objects yet.</li> 
+    {% endfor %} 
+    </table>
+    <!-- If objet_list is empty  -->
+    
+</ul>
